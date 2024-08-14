@@ -1,5 +1,5 @@
 const { DataTypes } = require("sequelize")
-const { sq } = require("../database/database.js")
+const { sq } = require("../config/database.js")
 
 const Lead = sq.define(
   "Lead",
@@ -40,6 +40,20 @@ const Lead = sq.define(
         notEmpty: true,
       },
     },
+    email: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
+    },
+    name: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
+    },
     linkedinUrl: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -54,7 +68,7 @@ const Lead = sq.define(
     },
   },
   {
-    tableName: "leads",
+    tableName: "Lead",
     timestamps: true,
   }
 )

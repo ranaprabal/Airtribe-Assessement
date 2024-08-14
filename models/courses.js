@@ -1,5 +1,5 @@
 const { DataTypes } = require("sequelize")
-const { sq } = require("../database/database.js")
+const { sq } = require("../config/database.js")
 
 const Course = sq.define(
   "Course",
@@ -40,24 +40,27 @@ const Course = sq.define(
         min: 1,
       },
     },
+    acceptedSeats: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+    },
     startDate: {
-      type: DataTypes.DATEONLY,
+      type: DataTypes.DATE,
       allowNull: false,
       validate: {
         isDate: true,
       },
     },
     endDate: {
-      type: DataTypes.DATEONLY,
+      type: DataTypes.DATE,
       allowNull: false,
       validate: {
         isDate: true,
-        isAfter: Sequelize.literal("startDate"),
       },
     },
   },
   {
-    tableName: "courses",
+    tableName: "Course",
     timestamps: true,
   }
 )

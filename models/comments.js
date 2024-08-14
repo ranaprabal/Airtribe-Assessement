@@ -1,5 +1,5 @@
 const { DataTypes } = require("sequelize")
-const { sq } = require("../database/database.js")
+const { sq } = require("../config/database.js")
 
 const Comment = sq.define(
   "Comment",
@@ -42,7 +42,7 @@ const Comment = sq.define(
     },
   },
   {
-    tableName: "comments",
+    tableName: "Comment",
     timestamps: true,
   }
 )
