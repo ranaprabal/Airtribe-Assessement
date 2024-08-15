@@ -6,8 +6,9 @@ const sq = new Sequelize(
   process.env.DB_USERNAME,
   process.env.DB_PASSWORD,
   {
-    host: "localhost",
+    host: process.env.DB_HOST,
     dialect: "postgres",
+    port: process.env.DB_PORT,
   }
 )
 
