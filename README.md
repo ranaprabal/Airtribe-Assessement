@@ -59,7 +59,7 @@ JWT_SECRET_KEY = "your_JWT_secretKey" // or your own jwt secret key
 #### up the compose File
 
 ```bash
-docker compose up
+docker-compose up
 ```
 
 - Method 2: Using Github
