@@ -4,7 +4,7 @@ const { Sequelize } = require("sequelize")
 const sq = new Sequelize(
   process.env.DB_NAME,
   process.env.DB_USERNAME,
-  "31082001",
+  process.env.DB_PASSWORD,
   {
     host: process.env.DB_HOST,
     dialect: "postgres",
