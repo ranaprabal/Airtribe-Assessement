@@ -4,7 +4,7 @@ const { Sequelize } = require("sequelize")
 const sq = new Sequelize(
   process.env.DB_NAME,
   process.env.DB_USERNAME,
-  process.env.DB_PASSWORD,
+  "31082001",
   {
     host: process.env.DB_HOST,
     dialect: "postgres",
@@ -14,6 +14,8 @@ const sq = new Sequelize(
 
 const testDbConnection = async () => {
   try {
+    const connectionUrl = `postgres://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@localhost:${process.env.DB_PORT}/${process.env.DB_NAME}`
+    console.log(connectionUrl)
     await sq.authenticate()
     console.log("DB Connection has been established successfully.")
   } catch (error) {
